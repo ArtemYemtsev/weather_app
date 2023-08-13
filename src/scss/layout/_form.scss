@@ -1,0 +1,40 @@
+.form {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+
+    &__input {
+        border: none;
+        outline: none;
+        font-size: 24px;
+        // border-radius: 12px;
+        padding: 3px 5px;
+        background: inherit;
+        border-bottom: 2px solid $main-color;
+        &:focus,
+        :active {
+            background: inherit;
+        }
+    }
+
+    &__button {
+        cursor: pointer;
+        background: none;
+        border: none;
+        outline: none;
+        width: 40px;
+        height: 40px;
+        color: $main-color;
+        border-radius: 100%;
+        margin-left: 10px;
+        
+        & svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        &:hover {
+            box-shadow: 0 0 2px 2px $main-color;
+        }
+    }
+}

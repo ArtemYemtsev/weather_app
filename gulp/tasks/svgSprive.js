@@ -10,5 +10,5 @@ export const svgSprive = () => {
             }
         },
     }))
-    .pipe(app.gulp.dest(app.path.build.images))
+    .pipe(app.gulp.dest(app.path.src.svgSrcSprite))
 }

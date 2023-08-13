@@ -1,0 +1,14 @@
+.footer {
+    padding-bottom: 20px;
+
+    &__inner {
+        background: #c4b593;
+        padding: 20px;
+        border-radius: 0 0 20px 20px;
+
+        &__autor {
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+}

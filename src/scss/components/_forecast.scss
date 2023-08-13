@@ -1,0 +1,64 @@
+.forecast {
+    
+    &__inner {
+        background: #c4b593;
+
+        &__title {
+            font-size: 24px;
+            font-weight: 700;
+            padding: 20px;
+        
+            &::first-letter{
+                text-transform: uppercase;
+            }
+        }
+
+        &__list {
+            padding: 0 30px;
+
+            &__item {
+                display: flex;
+                flex-wrap: nowrap;
+                // align-items: center;
+                width: 100%;
+                // justify-content: space-between;
+                border-top: 1px solid $main-color;
+                border-bottom: 1px solid $main-color;
+                padding: 5px 30px;
+
+                &__title {
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    padding: 5px 0;
+                }
+
+                &__day-time {
+                    align-content: center;
+                    margin-right: auto;
+                    font-weight: 500;
+                }
+
+                &__icon {
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 50px;
+                }
+
+                &__temp {
+                    margin-right: 50px;
+
+                }
+
+                &__wind {
+                    margin-right: 50px;
+
+                }
+
+                &__pop {
+                    margin-right: 50px;
+
+                }
+            }
+        }
+    }
+}

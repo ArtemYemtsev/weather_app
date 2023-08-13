@@ -1,0 +1,16 @@
+.loader-satellite {
+    animation-name: satelliteRotate;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: 5;
+}
+
+@keyframes satelliteRotate {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}

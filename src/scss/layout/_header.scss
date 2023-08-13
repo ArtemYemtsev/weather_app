@@ -1,0 +1,39 @@
+.header {
+    padding: 30px 0 0 0;
+
+    &__inner {
+        background: rgba(26, 204, 186, 0.611);
+        background: hsla(210, 76%, 55%, 0.904);
+        background: hsl(210, 70%, 70%);
+        background: #c4b593;
+        padding: 20px;
+        border-radius: 20px 20px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid $main-color;
+
+        &__title {
+            font-size: 48px;
+            font-weight: 700;
+            padding: 10px 0;
+            color: $main-color;
+            width: 50%;
+        }
+
+        &__units {
+
+            &__input {
+                visibility: hidden;
+
+                &:checked + label {
+                    font-weight: 500;
+                    text-decoration: underline;
+                }
+            }
+
+            &__label {
+                cursor: pointer;
+            }
+        }
+    }
+}

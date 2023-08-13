@@ -8,6 +8,180 @@
     <title>Weather App</title>
 </head>
 <body>
+    <div class="app">
+        <header class="app__header header">
+            <div class="container">
+                <div class="header__inner">
+                    <h1 class="header__inner__title">World Weather</h1>
+                    <form action="" id="form" class="header__inner__search-form form">
+                        <input type="text" class="header__inner__search-form__input form__input" placeholder="Enter city" id="input-search" required>
+                        <button type="submit" class="header__inner__search-form__button form__button">
+                            <svg>
+                                <use xlink:href="./img/icons/icons.svg#search"></use>
+                            </svg>
+                        </button>
+                    </form>
+                    <div class="header__inner__units">
+                        <input type="radio" name="units" id="metric" value="metric" class="header__inner__units__input" checked>
+                        <label for="metric" class="header__inner__units__label checked">metric</label>
+                        <input type="radio" name="units" id="standard" value="standard" class="header__inner__units__input">
+                        <label for="standard" class="header__inner__units__label">standard</label>
+                        <input type="radio" name="units" id="imperial" value="imperial" class="header__inner__units__input">
+                        <label for="imperial" class="header__inner__units__label">imperial</label>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <section class="app__weather weather">
+            <div class="container">
+                <div class="weather__inner">
+                    <div class="weather__inner__left">
+                        <h2 class="weather__inner__left__title">City</h2>
+                        <div class="weather__inner__left__box">
+                            <div class="weather__inner__left__box__main">
+                                
+                                <svg  class="weather__inner__left__box__main__icon">
+                                    <use xlink:href="./img/icons/icons.svg#globe"></use>
+                                </svg>
+                                
+                                <div class="weather__inner__left__box__main__temp">
+                                    <div class="weather__inner__left__box__main__temp__value">
+                                        <span>--</span>&deg;
+                                    </div>
+                                    <svg  class="weather__inner__left__box__main__temp__icon">
+                                        <use xlink:href="./img/icons/icons.svg#metric"></use>
+                                    </svg>
+                                </div>
+                                <p class="weather__inner__left__box__main__description">...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weather__inner__right">
+                        <div class="weather__inner__right__item">
+                            <svg  class="weather__inner__right__item__icon">
+                                <use xlink:href="./img/icons/icons.svg#metric"></use>
+                            </svg>
+                            <div class="weather__inner__right__item__label">
+                                max temp
+                            </div>
+                            <div class="weather__inner__right__item__value"><span>-</span>&deg;</div>
+                        </div>
+                        <div class="weather__inner__right__item">
+                            <svg  class="weather__inner__right__item__icon">
+                                <use xlink:href="./img/icons/icons.svg#metric"></use>
+                            </svg>
+                            <div class="weather__inner__right__item__label">
+                                min temp
+                            </div>
+                            <div class="weather__inner__right__item__value"><span>-</span>&deg;</div>
+                        </div>
+                        <div class="weather__inner__right__item">
+                            <svg  class="weather__inner__right__item__icon">
+                                <use xlink:href="./img/icons/icons.svg#wind"></use>
+                            </svg>
+                            <div class="weather__inner__right__item__label">
+                                wind speed
+                            </div>
+                            <div class="weather__inner__right__item__value"><span>-</span>m/s</div>
+                        </div>
+                        <div class="weather__inner__right__item">
+                            <svg  class="weather__inner__right__item__icon">
+                                <use xlink:href="./img/icons/icons.svg#wind-deg"></use>
+                            </svg>
+                            <div class="weather__inner__right__item__label">
+                                wind deg
+                            </div>
+                            <div class="weather__inner__right__item__value"><span>-</span>&deg;</div>
+                        </div>
+                        <div class="weather__inner__right__item">
+                            <svg  class="weather__inner__right__item__icon">
+                                <use xlink:href="./img/icons/icons.svg#humidity"></use>
+                            </svg>
+                            <div class="weather__inner__right__item__label">
+                                humidity
+                            </div>
+                            <div class="weather__inner__right__item__value"><span>-</span>&#37;</div>
+                        </div>
+                        <div class="weather__inner__right__item">
+                            <svg  class="weather__inner__right__item__icon">
+                                <use xlink:href="./img/icons/icons.svg#percip"></use>
+                            </svg>
+                            <div class="weather__inner__right__item__label">
+                                pop
+                            </div>
+                            <div class="weather__inner__right__item__value"><span>-</span>&#37;</div>
+                        </div>
+                        <div class="weather__inner__right__item">
+                            <svg  class="weather__inner__right__item__icon">
+                                <use xlink:href="./img/icons/icons.svg#sun-rise"></use>
+                            </svg>
+                            <div class="weather__inner__right__item__label">
+                                sun rise
+                            </div>
+                            <div class="weather__inner__right__item__value"><span>--:--</span><br />AM</div>
+                        </div>
+                        <div class="weather__inner__right__item">
+                            <svg  class="weather__inner__right__item__icon">
+                                <use xlink:href="./img/icons/icons.svg#sun-set"></use>
+                            </svg>
+                            <div class="weather__inner__right__item__label">
+                                sun set
+                            </div>
+                            <div class="weather__inner__right__item__value"><span>--:--</span><br />PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="forecast">
+            <div class="container">
+                <div class="forecast__inner">
+                    <h3 class="forecast__inner__title">
+                        forecast
+                    </h3>
+                    <ul class="forecast__inner__list">
+                        <li class="forecast__inner__list__item">
+                            <div class="forecast__inner__list__item__day-time">
+                                <div class="forecast__inner__list__item__title">...</div>
+                                <div>--:--</div>
+                            </div>
+
+                            <div class="forecast__inner__list__item__icon">
+                                <svg  class="forecast__inner__list__item__icon">
+                                    <use xlink:href="./img/icons/icons.svg#globe"></use>
+                                </svg>
+                            </div>
+
+                            <div class="forecast__inner__list__item__temp">
+                                <h3 class="forecast__inner__list__item__title">temp</h3>
+                                <div><span>--</span>&deg;</div>
+                            </div>
+
+                            <div class="forecast__inner__list__item__wind">
+                                <h3 class="forecast__inner__list__item__title">wind</h3>
+                                <div><span>--</span><br />m/s</div>
+                            </div>
+
+                            <div class="forecast__inner__list__item__pop">
+                                <h3 class="forecast__inner__list__item__title">pop</h3>
+                                <div><span>--</span>&#37;</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <h2 class="footer__inner__autor">Autor: Artem Yemtsev</h2>
+                </div>
+            </div>
+        </footer>
+    </div>
     <script src="js/app.min.js"></script>
 </body>
 </html>

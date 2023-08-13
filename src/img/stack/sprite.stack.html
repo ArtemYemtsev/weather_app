@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SVG stack preview | svg-sprite</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                color: #666;
+                background: #fafafa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            header {
+                display: block;
+                padding: 3em 3em 2em;
+                background-color: #fff;
+            }
+
+            header p {
+                margin: 2em 0 0;
+            }
+
+            section {
+                border-top: 1px solid #eee;
+                padding: 2em 3em 0;
+            }
+
+            section ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            section li {
+                display: inline-block;
+                background-color: #fff;
+                position: relative;
+                margin: 0 2em 2em 0;
+                vertical-align: top;
+                border: 1px solid #ccc;
+                padding: 1em 1em 3em;
+                cursor: default;
+            }
+
+            .icon-box {
+                margin: 0;
+                width: 144px;
+                height: 144px;
+                position: relative;
+                background: #ccc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='%23fff' d='M6 0h6v6H6zM0 6h6v6H0z'/%3E%3C/svg%3E") top left repeat;
+                border: 1px solid #ccc;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .icon {
+                display: inline-block;
+            }
+
+            h1 {
+                margin-top: 0;
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+                font-weight: 400;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: absolute;
+                left: 1em;
+                right: 1em;
+                bottom: 1em;
+            }
+
+            footer {
+                display: block;
+                margin: 0;
+                padding: 0 3em 3em;
+            }
+
+            footer p {
+                margin: 0;
+                font-size: .7em;
+            }
+
+            footer a {
+                color: #0f7595;
+                margin-left: 0;
+            }
+        </style>
+
+<!--
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+-->
+
+<style>
+ .svg-01d-dims { width: 800px; height: 800px; }
+ .svg-01n-dims { width: 800px; height: 800px; }
+ .svg-02d-dims { width: 800px; height: 800px; }
+ .svg-02n-dims { width: 800px; height: 800px; }
+ .svg-03d-dims { width: 800px; height: 800px; }
+ .svg-03n-dims { width: 800px; height: 800px; }
+ .svg-04d-dims { width: 800px; height: 800px; }
+ .svg-04n-dims { width: 800px; height: 800px; }
+ .svg-09d-dims { width: 800px; height: 800px; }
+ .svg-09n-dims { width: 800px; height: 800px; }
+ .svg-10d-dims { width: 800px; height: 800px; }
+ .svg-10n-dims { width: 800px; height: 800px; }
+ .svg-11d-dims { width: 800px; height: 800px; }
+ .svg-11n-dims { width: 800px; height: 800px; }
+ .svg-13d-dims { width: 800px; height: 800px; }
+ .svg-13n-dims { width: 800px; height: 800px; }
+ .svg-404-dims { width: 800px; height: 800px; }
+ .svg-50d-dims { width: 800px; height: 800px; }
+ .svg-50n-dims { width: 800px; height: 800px; }
+ .svg-globe-dims { width: 800px; height: 800px; }
+ .svg-humidity-dims { width: 800px; height: 800px; }
+ .svg-imperial-dims { width: 800px; height: 800px; }
+ .svg-metric-dims { width: 800px; height: 800px; }
+ .svg-percip-dims { width: 800px; height: 800px; }
+ .svg-satellite-dims { width: 800px; height: 800px; }
+ .svg-search-dims { width: 800px; height: 800px; }
+ .svg-standard-dims { width: 800px; height: 800px; }
+ .svg-sun-rise-dims { width: 800px; height: 800px; }
+ .svg-sun-set-dims { width: 800px; height: 800px; }
+ .svg-umbrella-dims { width: 800px; height: 800px; }
+ .svg-wind-dims { width: 800px; height: 800px; }
+ .svg-wind-deg-dims { width: 800px; height: 800px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+    </head>
+    <body>
+        <header>
+            <h1>SVG stack preview</h1>
+            <p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+            <ul>
+                <li>Your browser has to <a href="https://caniuse.com/svg-fragment" target="_blank" rel="noopener noreferrer">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+                <li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank" rel="noopener noreferrer">fixsvgstack.jquery.js</a>.</li>
+            </ul>
+        </header>
+        <section>
+
+<!--
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+-->
+
+            <ul>
+
+             <li title="01d">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#01d" class="svg-01d-dims" alt="01d">
+                    </div>
+                    <h2>01d, </h2>
+                </li>
+             <li title="01n">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#01n" class="svg-01n-dims" alt="01n">
+                    </div>
+                    <h2>01n, </h2>
+                </li>
+             <li title="02d">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#02d" class="svg-02d-dims" alt="02d">
+                    </div>
+                    <h2>02d, </h2>
+                </li>
+             <li title="02n">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#02n" class="svg-02n-dims" alt="02n">
+                    </div>
+                    <h2>02n, </h2>
+                </li>
+             <li title="03d">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#03d" class="svg-03d-dims" alt="03d">
+                    </div>
+                    <h2>03d, </h2>
+                </li>
+             <li title="03n">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#03n" class="svg-03n-dims" alt="03n">
+                    </div>
+                    <h2>03n, </h2>
+                </li>
+             <li title="04d">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#04d" class="svg-04d-dims" alt="04d">
+                    </div>
+                    <h2>04d, </h2>
+                </li>
+             <li title="04n">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#04n" class="svg-04n-dims" alt="04n">
+                    </div>
+                    <h2>04n, </h2>
+                </li>
+             <li title="09d">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#09d" class="svg-09d-dims" alt="09d">
+                    </div>
+                    <h2>09d, </h2>
+                </li>
+             <li title="09n">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#09n" class="svg-09n-dims" alt="09n">
+                    </div>
+                    <h2>09n, </h2>
+                </li>
+             <li title="10d">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#10d" class="svg-10d-dims" alt="10d">
+                    </div>
+                    <h2>10d, </h2>
+                </li>
+             <li title="10n">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#10n" class="svg-10n-dims" alt="10n">
+                    </div>
+                    <h2>10n, </h2>
+                </li>
+             <li title="11d">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#11d" class="svg-11d-dims" alt="11d">
+                    </div>
+                    <h2>11d, </h2>
+                </li>
+             <li title="11n">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#11n" class="svg-11n-dims" alt="11n">
+                    </div>
+                    <h2>11n, </h2>
+                </li>
+             <li title="13d">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#13d" class="svg-13d-dims" alt="13d">
+                    </div>
+                    <h2>13d, </h2>
+                </li>
+             <li title="13n">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#13n" class="svg-13n-dims" alt="13n">
+                    </div>
+                    <h2>13n, </h2>
+                </li>
+             <li title="404">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#404" class="svg-404-dims" alt="404">
+                    </div>
+                    <h2>404, </h2>
+                </li>
+             <li title="50d">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#50d" class="svg-50d-dims" alt="50d">
+                    </div>
+                    <h2>50d, </h2>
+                </li>
+             <li title="50n">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#50n" class="svg-50n-dims" alt="50n">
+                    </div>
+                    <h2>50n, </h2>
+                </li>
+             <li title="globe">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#globe" class="svg-globe-dims" alt="globe">
+                    </div>
+                    <h2>globe, </h2>
+                </li>
+             <li title="humidity">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#humidity" class="svg-humidity-dims" alt="humidity">
+                    </div>
+                    <h2>humidity, </h2>
+                </li>
+             <li title="imperial">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#imperial" class="svg-imperial-dims" alt="imperial">
+                    </div>
+                    <h2>imperial, </h2>
+                </li>
+             <li title="metric">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#metric" class="svg-metric-dims" alt="metric">
+                    </div>
+                    <h2>metric, </h2>
+                </li>
+             <li title="percip">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#percip" class="svg-percip-dims" alt="percip">
+                    </div>
+                    <h2>percip, </h2>
+                </li>
+             <li title="satellite">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#satellite" class="svg-satellite-dims" alt="satellite">
+                    </div>
+                    <h2>satellite, </h2>
+                </li>
+             <li title="search">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#search" class="svg-search-dims" alt="search">
+                    </div>
+                    <h2>search, </h2>
+                </li>
+             <li title="standard">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#standard" class="svg-standard-dims" alt="standard">
+                    </div>
+                    <h2>standard, </h2>
+                </li>
+             <li title="sun-rise">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#sun-rise" class="svg-sun-rise-dims" alt="sun-rise">
+                    </div>
+                    <h2>sun-rise, </h2>
+                </li>
+             <li title="sun-set">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#sun-set" class="svg-sun-set-dims" alt="sun-set">
+                    </div>
+                    <h2>sun-set, </h2>
+                </li>
+             <li title="umbrella">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#umbrella" class="svg-umbrella-dims" alt="umbrella">
+                    </div>
+                    <h2>umbrella, </h2>
+                </li>
+             <li title="wind">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#wind" class="svg-wind-dims" alt="wind">
+                    </div>
+                    <h2>wind, </h2>
+                </li>
+             <li title="wind-deg">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#wind-deg" class="svg-wind-deg-dims" alt="wind-deg">
+                    </div>
+                    <h2>wind-deg, </h2>
+                </li>
+         </ul>
+
+<!--
+====================================================================================================
+-->
+
+        </section>
+        <footer>
+            <p>Generated at Sat, 12 Aug 2023 22:17:19 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+        </footer>
+    </body>
+</html>
