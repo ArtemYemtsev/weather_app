@@ -1,5 +1,11 @@
+import { autocomplete } from "./services/autocomplete.js"
+
 import { submitHandler } from "./handlers/submitHandler.js"
 import { unitsHandler } from "./handlers/unitsHandler.js"
+
+autocomplete(
+    document.getElementById('input-search'),
+    document.getElementById('autocomplete-list'))
 
 const form = document.getElementById('form')
 form.addEventListener('submit', e => submitHandler(e))

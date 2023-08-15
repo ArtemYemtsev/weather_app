@@ -19,12 +19,16 @@
                     <form action="#" 
                             id="form" 
                             class="header__inner__search-form form">
-                        <input 
-                            type="text" 
-                            class="header__inner__search-form__input form__input" 
-                            placeholder="Enter city" 
-                            id="input-search" 
-                            required>
+                        <div class="autocomplete">
+                            <input 
+                                type="text" 
+                                class="header__inner__search-form__input form__input" 
+                                placeholder="Enter city" 
+                                id="input-search" 
+                                required>
+                            <ul class="autocomplete__list" id="autocomplete-list">
+                            </ul>
+                        </div>
                         <button type="submit" class="header__inner__search-form__button form__button">
                             <svg>
                                 <use xlink:href="img/icons/icons.svg#search"></use>
