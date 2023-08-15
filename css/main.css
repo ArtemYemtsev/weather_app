@@ -315,6 +315,30 @@ body {
   box-shadow: 0 0 2px 2px #20343f;
 }
 
+.autocomplete {
+  position: relative;
+}
+.autocomplete__list {
+  position: absolute;
+  z-index: 10;
+  max-width: 270px;
+  width: 100%;
+}
+.autocomplete__list__item {
+  background-color: #609fc1;
+  padding: 10px;
+  border-bottom: 1px solid #20343f;
+  overflow: hidden;
+  font-size: 22px;
+}
+.autocomplete__list__item:hover {
+  background: #77b9dd;
+}
+.autocomplete__list__item:active {
+  background: #20343f;
+  color: #fff;
+}
+
 .weather__inner {
   padding: 20px;
   display: flex;
