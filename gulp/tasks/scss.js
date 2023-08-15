@@ -3,9 +3,8 @@ import gulpSass from 'gulp-sass'
 import rename from 'gulp-rename'
 
 import cleanCss from 'gulp-clean-css'
-// import webpcss from 'gulp-webpcss'
 import autoprefixer from 'gulp-autoprefixer'
-import groupCssMediaQueries from 'gulp-group-css-media-queries'
+// import groupCssMediaQueries from 'gulp-group-css-media-queries'
 
 
 
@@ -16,7 +15,7 @@ export const scss = () => {
     .pipe(sass({
         outputStyle: 'expanded'
     }))
-    .pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
+    // .pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
     .pipe(app.plugins.if(app.isBuild, 
         autoprefixer({
         grid: true,

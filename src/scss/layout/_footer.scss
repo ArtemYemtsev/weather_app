@@ -1,10 +1,18 @@
 .footer {
     padding-bottom: 20px;
 
+    @include respond(426px){
+        padding: 0;
+    }
+
     &__inner {
-        background: #c4b593;
+        background: $main-bg;
         padding: 20px;
         border-radius: 0 0 20px 20px;
+
+        @include respond(426px){
+            border-radius: 0;
+        }
 
         &__autor {
             font-size: 24px;

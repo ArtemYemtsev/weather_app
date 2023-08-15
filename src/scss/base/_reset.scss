@@ -40,3 +40,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s;
+	font-size: 24px;
+}

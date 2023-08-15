@@ -11,20 +11,7 @@ body {
     font-size: 16px;
     height: 100vh;
     color: $main-color;
-    background: $main-color;
-    // color: #FFFFFF;
-    // background: rgb(3,2,2);
-//     background: linear-gradient(0deg, rgba(3,2,2,1) 1%, rgba(26,204,187,0.5803571428571428) 51%, rgba(22,131,180,1) 100%);
-//     background: linear-gradient(0deg, rgba(3,2,2,1) 1%, rgba(26,204,187,0.5803571428571428) 51%, rgba(22,131,180,1) 100%);
-//     background: rgb(3,2,2);
-// background: linear-gradient(0deg, rgba(3,2,2,1) 1%, rgba(26,98,204,0.5803571428571428) 51%, rgba(149,202,238,1) 100%);
-// background: rgb(255,255,255);
-// background: linear-gradient(0deg, rgba(255,255,255,1) 1%, rgba(26,98,204,0.5803571428571428) 51%, rgba(149,202,238,1) 100%);
-// background: rgb(255,255,255);
-// background: linear-gradient(0deg, rgba(255,255,255,1) 1%, rgba(89,184,252,1) 27%, rgba(149,202,238,1) 100%);
-
-// background: rgb(196,181,147);
-// background: linear-gradient(0deg, rgba(196,181,147,1) 1%, rgba(252,248,239,1) 100%) no-repeat;
+    background: $body-bg;
 }
 
 .container{
@@ -32,4 +19,8 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 0 30px;
+
+    @include respond(426px){
+        padding: 0;
+    }
 }

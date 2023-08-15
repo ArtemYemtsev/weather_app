@@ -1,10 +1,18 @@
-//Gradient mixins
-@mixin gradient-text-properties{
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-}
-@mixin gradient-bg{
-    background: linear-gradient(0deg, rgba(3,2,2,1) 1%, rgba(26,204,187,0.5803571428571428) 51%, rgba(22,131,180,1) 100%);
+// Media query
+@mixin respond($breakpoint){
+    @media (max-width: $breakpoint){
+        @content;
+    }
+
+    @if $breakpoint == md {
+        @media (max-width: 768px){
+            @content;
+        }
+    }
+
+    @if $breakpoint == sm {
+        @media (max-width: 375px){
+            @content;
+        }
+    }
 }

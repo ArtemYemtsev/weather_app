@@ -1,16 +1,25 @@
 .header {
     padding: 30px 0 0 0;
 
+    @include respond(426px){
+        padding: 0;
+    }
+
     &__inner {
-        background: rgba(26, 204, 186, 0.611);
-        background: hsla(210, 76%, 55%, 0.904);
-        background: hsl(210, 70%, 70%);
-        background: #c4b593;
+        background: $main-bg;
         padding: 20px;
         border-radius: 20px 20px 0 0;
         display: flex;
         flex-wrap: wrap;
         border-bottom: 1px solid $main-color;
+
+        @include respond(md){
+            display: block;
+        }
+
+        @include respond(426px){
+            border-radius: 0;
+        }
 
         &__title {
             font-size: 48px;
@@ -18,12 +27,17 @@
             padding: 10px 0;
             color: $main-color;
             width: 50%;
+
+            @include respond(md){
+                width: 100%;
+            }
         }
 
         &__units {
 
             &__input {
                 visibility: hidden;
+                margin-left: -16px;
 
                 &:checked + label {
                     font-weight: 500;
@@ -33,6 +47,7 @@
 
             &__label {
                 cursor: pointer;
+                padding-right: 16px;
             }
         }
     }

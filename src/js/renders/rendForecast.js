@@ -1,3 +1,4 @@
+import { DISPLAY, FORECAST } from "../constants/className.js"
 import { date } from "../services/date.js"
 import { tempForecast } from '../templates/tempForecast.js'
 
@@ -13,12 +14,13 @@ export const rendForecast = (data) => {
             icon: LIST[i].weather[0].icon,
             temp: Math.round(LIST[i].main.temp),
             wind: Math.round(LIST[i].wind.speed),
-            pop: LIST[i].pop*100,
+            pop: Math.round(LIST[i].pop*100)
         }
-        console.log(DATA_TEMP.day)
         DATA.push(tempForecast(DATA_TEMP))
     }
-
-    const forecast = document.querySelector('.forecast__inner__list')
+    const forecastBlock = document.querySelector(`.${FORECAST.FORECAST}`)
+    forecastBlock.classList.add(`${DISPLAY}`)
+    
+    const forecast = document.querySelector(`.${FORECAST.INNER_LIST}`)
     forecast.innerHTML = DATA.join('')
 }

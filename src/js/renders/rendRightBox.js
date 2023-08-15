@@ -1,6 +1,7 @@
 import { date } from '../services/date.js'
+import { RIGHT_B } from '../constants/className.js'
 
-export const tempRightBox = (data, sun) => {
+export const rendRightBox = (data, sun) => {
     const units = document.querySelectorAll("input[name=units]:checked")
     const DATA = [
         Math.round(data.main.temp_max),
@@ -42,26 +43,26 @@ export const tempRightBox = (data, sun) => {
         '&deg;',
         '&#37;',
         '&#37;',
-        'AM',
-        'PM'
+        ' ',
+        ' '
     ]
 
     let renderRightBox = []
 
     for (let i = 0; i < TITLE_RIGHT_BOX.length; i++) {
         renderRightBox.push(
-            `<div class="weather__inner__right__item">
-                <svg  class="weather__inner__right__item__icon">
-                    <use xlink:href="./img/icons/icons.svg#${ICONS_RIGHT_BOX[i]}"></use>
+            `<div class="${RIGHT_B.ITEM}">
+                <svg  class="${RIGHT_B.ITEM_ICON}">
+                    <use xlink:href="img/icons/icons.svg#${ICONS_RIGHT_BOX[i]}"></use>
                 </svg>
-                <div class="weather__inner__right__item__label">
+                <div class="${RIGHT_B.ITEM_LABEL}">
                     ${TITLE_RIGHT_BOX[i]}
                 </div>
-                <div class="weather__inner__right__item__value"><span>${DATA[i]}</span>${UNIT[i]}</div>
+                <div class="${RIGHT_B.ITEM_VAL}"><span>${DATA[i]}</span> ${UNIT[i]}</div>
             </div>`
         )
     }
 
-    let rightBox = document.querySelector(".weather__inner__right")
+    let rightBox = document.querySelector(`.${RIGHT_B.INNER}`)
     rightBox.innerHTML = renderRightBox.join('')
 }
