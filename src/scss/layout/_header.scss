@@ -21,6 +21,10 @@
             border-radius: 0;
         }
 
+        @include respond(sm) {
+            padding: 10px 20px;
+        }
+
         &__title {
             font-size: 48px;
             font-weight: 700;
@@ -30,6 +34,15 @@
 
             @include respond(md){
                 width: 100%;
+            }
+            
+            @include respond(426px){
+                font-size: 36px;
+                padding: 5px 0;
+            }
+
+            @include respond(sm) {
+                padding: 0;
             }
         }
 

@@ -8,6 +8,11 @@
         @include respond(706px){
             display: block;
         }
+
+        @include respond(sm) {
+            padding: 10px 20px;
+        }
+
         
         &__left {
             max-width: 300px;
@@ -42,6 +47,11 @@
                 @include respond(706px){
                     padding-bottom: 20px;
                 }
+
+                @include respond(sm) {
+                    padding-bottom: 10px;
+                    font-size: 28px;
+                }
             }
             
             &__box {
@@ -57,6 +67,11 @@
                         @include respond(920px){
                             width: 200px;
                             height: 200px;
+                        }
+
+                        @include respond(sm) {
+                            width: 90px;
+                            height: 90px;
                         }
                     }
 
@@ -75,6 +90,10 @@
 
                             @include respond(920px){
                                 font-size: 120px;
+                            }
+
+                            @include respond(sm) {
+                                font-size: 100px;
                             }
                         }
 
