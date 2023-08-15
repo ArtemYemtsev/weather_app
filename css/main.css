@@ -198,6 +198,16 @@ body {
     border-radius: 0;
   }
 }
+@media (max-width: sm) {
+  .header__inner {
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 375px) {
+  .header__inner {
+    padding: 10px 20px;
+  }
+}
 .header__inner__title {
   font-size: 48px;
   font-weight: 700;
@@ -213,6 +223,22 @@ body {
 @media (max-width: 768px) {
   .header__inner__title {
     width: 100%;
+  }
+}
+@media (max-width: 426px) {
+  .header__inner__title {
+    font-size: 36px;
+    padding: 5px 0;
+  }
+}
+@media (max-width: sm) {
+  .header__inner__title {
+    padding: 0;
+  }
+}
+@media (max-width: 375px) {
+  .header__inner__title {
+    padding: 0;
   }
 }
 .header__inner__units__input {
@@ -300,6 +326,16 @@ body {
     display: block;
   }
 }
+@media (max-width: sm) {
+  .weather__inner {
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 375px) {
+  .weather__inner {
+    padding: 10px 20px;
+  }
+}
 .weather__inner__left {
   max-width: 300px;
   width: 100%;
@@ -338,6 +374,18 @@ body {
     padding-bottom: 20px;
   }
 }
+@media (max-width: sm) {
+  .weather__inner__left__title {
+    padding-bottom: 10px;
+    font-size: 28px;
+  }
+}
+@media (max-width: 375px) {
+  .weather__inner__left__title {
+    padding-bottom: 10px;
+    font-size: 28px;
+  }
+}
 .weather__inner__left__box__main__icon {
   display: block;
   margin: 0 auto;
@@ -348,6 +396,18 @@ body {
   .weather__inner__left__box__main__icon {
     width: 200px;
     height: 200px;
+  }
+}
+@media (max-width: sm) {
+  .weather__inner__left__box__main__icon {
+    width: 90px;
+    height: 90px;
+  }
+}
+@media (max-width: 375px) {
+  .weather__inner__left__box__main__icon {
+    width: 90px;
+    height: 90px;
   }
 }
 .weather__inner__left__box__main__temp {
@@ -367,6 +427,16 @@ body {
 @media (max-width: 920px) {
   .weather__inner__left__box__main__temp__value {
     font-size: 120px;
+  }
+}
+@media (max-width: sm) {
+  .weather__inner__left__box__main__temp__value {
+    font-size: 100px;
+  }
+}
+@media (max-width: 375px) {
+  .weather__inner__left__box__main__temp__value {
+    font-size: 100px;
   }
 }
 .weather__inner__left__box__main__temp__icon {
