@@ -6,16 +6,18 @@ export const autocomplete = (input, list) => {
     let timer
 
     function findMatches(e) {
-        clearTimeout(timer)
-        if(e.target.value) {
+        if (e.keyCode !== 38 || e.keyCode !== 40 || e.keyCode !== 13) {
+            clearTimeout(timer)
+            if(e.target.value) {
 
-            timer = setTimeout(() => {
-                    getCities(e.target.value)
-                    .then(data => renderCityList(data))
-                    .catch(error => console.error(error))
-                }, 600)
+                timer = setTimeout(() => {
+                        getCities(e.target.value)
+                        .then(data => renderCityList(data))
+                        .catch(error => console.error(error))
+                    }, 600)
 
-        } else list.innerHTML = ''
+            } else list.innerHTML = ''
+        }
     }
 
     function renderCityList(data) {
@@ -25,16 +27,18 @@ export const autocomplete = (input, list) => {
         for(let item in data ) {
             const li = document.createElement('LI')
             li.classList.add('autocomplete__list__item')
+            li.classList.add('input__item')
             li.innerHTML = `${data[item].name}`
             li.setAttribute('id', `${data[item].name}`)
             list.appendChild(li)
         }
-
-        list.addEventListener('click', e => {
-            input.value = e.target.id
-            list.innerHTML = ''
-            submitHandler(e)
-        })
     }
-    input.addEventListener('keyup', e => findMatches(e))
+    
+    list.addEventListener('click', e => {
+        input.value = e.target.id
+        list.innerHTML = ''
+        submitHandler(e)
+    })
+
+    input.addEventListener('input', e => findMatches(e))
 }

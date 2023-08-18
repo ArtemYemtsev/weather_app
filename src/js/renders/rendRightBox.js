@@ -8,8 +8,8 @@ export const rendRightBox = (data, sun) => {
         Math.round(data.main.temp_min),
         Math.round(data.wind.speed),
         data.wind.deg,
-        data.main.humidity,
-        data.pop*100,
+        data.main.humidity.toFixed(0),
+        (data.pop*100).toFixed(0),
         date(sun[0], 'time'),
         date(sun[1], 'time')
     ]

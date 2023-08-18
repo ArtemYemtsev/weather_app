@@ -14,15 +14,19 @@
             overflow: hidden;
             font-size: 22px;
 
-
-            &:hover {
+            &:hover
+            {
                 background: $body-bg-sec;
             }
 
             &:active {
                 background: $main-color;
                 color: #fff;
-            }
+            }         
         }
     }
+}
+
+.autocoplete__list__item-active.input__item  {
+        background: $body-bg-sec;
 }

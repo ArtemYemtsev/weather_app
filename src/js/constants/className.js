@@ -39,3 +39,8 @@ export const ANIMATE = {
 
 export const DISPLAY = 'display'
 
+export const AUTOCOMP = {
+    LIST_ITEM: 'autocomplete__list__item',
+    LIST_ITEM_ACTIVE: "autocoplete__list__item-active"
+}
+
